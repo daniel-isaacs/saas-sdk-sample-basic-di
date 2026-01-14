@@ -1,36 +1,38 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## Getting Started
 
-First, run the development server:
+This is a [Next.js](https://nextjs.org) project for a very basic Optimizely SaaS CMS frontend implementation.
+
+It leverages the [Optimizely CMS JavaScript tools](https://github.com/episerver/content-js-sdk/tree/main)
+
+## To run the site [note: this section needs review]
+
+First, copy the .env.template to .env, and fill in the values from your CMS. (You'll need to create a new API key in the CMS.)
+
+In the CMS, create a homepage using the BlankExperience type, and then set up an Application for that homepage. Set the hostname to "localhost:3000".
+
+Then, install:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Test your setup:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+> optimizely-cms-cli login
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Next, push the content types and display templates to the CMS
+```bash
+> optimizely-cms-cli login
+```
 
-## Learn More
+Finally, run the site:
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+> npm run dev
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Go back to the CMS, and add a section > row > column > Heading element.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+At this point you should see the preview in the CMS. If you publish the page, you should be able to view it at http://localhost:3000/en
