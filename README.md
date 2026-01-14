@@ -19,12 +19,12 @@ npm install
 Test your setup:
 
 ```bash
-> optimizely-cms-cli login
+> npx @optimizely/cms-cli login
 ```
 
 Next, push the content types and display templates to the CMS
 ```bash
-> optimizely-cms-cli login
+> npx @optimizely/cms-cli config push optimizely.config.mjs
 ```
 
 Finally, run the site:
